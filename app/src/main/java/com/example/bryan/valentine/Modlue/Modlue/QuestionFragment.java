@@ -37,8 +37,9 @@ public class QuestionFragment extends Fragment {
         mbnYes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Animation zoom_in_finish = AnimationUtils.loadAnimation(getActivity(), R.anim.zoom_in_finish);
-                mHeartZoom.startAnimation(zoom_in_finish);
+                mHeartZoom.setVisibility(View.VISIBLE);
+//                Animation zoom_in_finish = AnimationUtils.loadAnimation(getActivity(), R.anim.zoom_in_finish);
+//                mHeartZoom.startAnimation(zoom_in_finish);
                 Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
                     @Override
