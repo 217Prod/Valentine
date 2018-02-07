@@ -1,0 +1,60 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp"
+    tools:context="com.example.bryan.valentine.Modlue.Modlue.QuestionFragment">
+
+    <LinearLayout
+        android:id="@+id/layout_question"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/text_question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Are You Love Him ?"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:textSize="25sp" />
+
+        <LinearLayout
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:textStyle="bold"
+                android:text="No"
+                android:textSize="25sp"
+                android:id="@+id/button_no"
+                android:background="@drawable/bg_question_button_no"
+                android:layout_marginRight="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:id="@+id/button_yes"
+                android:text="Yes"
+                android:background="@drawable/bg_question_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </LinearLayout>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/scribble_heart_crop"
+        android:id="@+id/image_heart_zoom"
+        android:visibility="invisible"
+        />
+
+</FrameLayout>
