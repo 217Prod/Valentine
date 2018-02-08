@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         View decorView = getWindow().getDecorView();
         int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);
-        
+
         initView();
         setFont();
 
@@ -59,27 +59,28 @@ public class MainActivity extends AppCompatActivity {
         addFragmentQuestion();
 
 
+    }
+
+    private void addFragmentQuestion() {
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                FragmentManager fragmentManager = getFragmentManager();
+                FragmentTransaction transaction = fragmentManager.beginTransaction();
+                QuestionFragment questionFragment = new QuestionFragment();
+                transaction.add(R.id.layout_container, questionFragment, "MyFragment");
+                transaction.commit();
+            }
+        }, 5000);
 
     }
-    private void addFragmentQuestion(){
-       Handler handler = new Handler();
-       handler.postDelayed(new Runnable() {
-           @Override
-           public void run() {
-               FragmentManager fragmentManager = getFragmentManager();
-               FragmentTransaction transaction = fragmentManager.beginTransaction();
-               QuestionFragment questionFragment =  new QuestionFragment();
-               transaction.add(R.id.layout_container,questionFragment,"MyFragment");
-               transaction.commit();
-           }
-       },5000);
 
-    }
-    private void animationForTextValentine(){
-        CountDownTimer countDownTimer = new CountDownTimer(mTimeSong,3000) {
+    private void animationForTextValentine() {
+        CountDownTimer countDownTimer = new CountDownTimer(mTimeSong, 3000) {
             @Override
             public void onTick(long l) {
-                Animation leftToRight = AnimationUtils.loadAnimation(getBaseContext(),R.anim.left_to_right);
+                Animation leftToRight = AnimationUtils.loadAnimation(getBaseContext(), R.anim.left_to_right);
                 mtvValentine.startAnimation(leftToRight);
             }
 
@@ -91,13 +92,14 @@ public class MainActivity extends AppCompatActivity {
         };
         countDownTimer.start();
     }
-    private void animationForHeartRed(){
+
+    private void animationForHeartRed() {
         CountDownTimer countDownTimer = new CountDownTimer(mTimeSong, 6000) {
             @Override
             public void onTick(long l) {
-                Animation fade_in = AnimationUtils.loadAnimation(getBaseContext(),R.anim.fade_in);
+                Animation fade_in = AnimationUtils.loadAnimation(getBaseContext(), R.anim.fade_in);
                 mivHeartRed.startAnimation(fade_in);
-                Animation fade_out = AnimationUtils.loadAnimation(getBaseContext(),R.anim.fade_out);
+                Animation fade_out = AnimationUtils.loadAnimation(getBaseContext(), R.anim.fade_out);
                 mivHeartRed.startAnimation(fade_out);
             }
 
@@ -110,13 +112,14 @@ public class MainActivity extends AppCompatActivity {
         countDownTimer.start();
 
     }
-    private void animationForTextName(){
+
+    private void animationForTextName() {
         CountDownTimer countDownTimer = new CountDownTimer(mTimeSong, 400) {
             @Override
             public void onTick(long l) {
-            Animation topBottom = AnimationUtils.loadAnimation(getBaseContext(),R.anim.top_to_bottom);
-            mtvNameBoy.startAnimation(topBottom);
-            mtvNameGirl.startAnimation(topBottom);
+                Animation topBottom = AnimationUtils.loadAnimation(getBaseContext(), R.anim.top_to_bottom);
+                mtvNameBoy.startAnimation(topBottom);
+                mtvNameGirl.startAnimation(topBottom);
             }
 
             @Override
@@ -127,6 +130,7 @@ public class MainActivity extends AppCompatActivity {
         };
         countDownTimer.start();
     }
+
     private void animationForHearMini() {
 
         CountDownTimer countDownTimer = new CountDownTimer(mTimeSong, 500) {
@@ -140,17 +144,19 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-            mivHeartMini.clearAnimation();
+                mivHeartMini.clearAnimation();
 
             }
         };
         countDownTimer.start();
     }
+
     private void startPlayMediaService() {
         startService(mConnectionToService);
         Toast.makeText(getBaseContext(), getResources().getString(R.string.start_service), Toast.LENGTH_SHORT).show();
 
     }
+
     private void stopPlayMediaService() {
         //after 4m2s call stop service;
         stopService(mConnectionToService);
@@ -164,7 +170,8 @@ public class MainActivity extends AppCompatActivity {
         mivHeartRed = findViewById(R.id.image_heart_red);
         mtvValentine = findViewById(R.id.text_valentine);
     }
-    private void setFont(){
+
+    private void setFont() {
         mCustomFont = Typeface.createFromAsset(getAssets(), "fonts/fiolex_girl.ttf");
         mtvValentine.setTypeface(mCustomFont);
         mtvNameBoy.setTypeface(mCustomFont);
