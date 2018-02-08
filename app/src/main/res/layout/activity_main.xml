@@ -10,6 +10,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_laucher_heartcrop" />
+    <ImageView
+        android:id="@+id/image_heart_red"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/scribble_heart_crop" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/name_boy"
-            android:textColor="#e70000"
+            android:textColor="#ffffff"
             android:textSize="30sp"
             android:textStyle="bold|italic" />
 
@@ -42,16 +48,11 @@
             android:layout_gravity="center"
             android:layout_marginLeft="10dp"
             android:text="@string/name_girl"
-            android:textColor="#e70000"
+            android:textColor="#ffffff"
             android:textSize="30sp"
             android:textStyle="bold|italic" />
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/image_heart_red"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/scribble_heart_crop" />
 
     <TextView
 
