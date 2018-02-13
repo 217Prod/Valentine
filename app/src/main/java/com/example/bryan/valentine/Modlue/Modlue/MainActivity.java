@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
                 transaction.add(R.id.layout_container, questionFragment, "MyFragment");
                 transaction.commit();
             }
-        }, 5000);
+        }, mTimeSong/4);
 
     }
 

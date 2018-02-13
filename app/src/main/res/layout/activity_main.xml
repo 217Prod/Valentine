@@ -28,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/name_boy"
+            android:text="Trung Tính"
             android:textColor="#ffffff"
             android:textSize="30sp"
             android:textStyle="bold|italic" />
@@ -47,7 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginLeft="10dp"
-            android:text="@string/name_girl"
+            android:text="Thúy Nhạn"
             android:textColor="#ffffff"
             android:textSize="30sp"
             android:textStyle="bold|italic" />
